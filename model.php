@@ -42,3 +42,16 @@ class model {
         $statement->execute();
         echo 'I just updated record id = ' . $this->id.'<br>';
     }
+     public function delete() {
+        $modelName1=static::$modelName;
+        $tableName = $modelName1::tableName();
+        $sql= 'delete from '.$tableName.' where id='.$this->id;
+        $db = dbConn::getConnection();
+        $statement = $db->prepare($sql);
+        $statement->execute();
+        echo 'I just deleted record id = ' . $this->id.'<br>';
+    }
+    
+}
+
+?>
