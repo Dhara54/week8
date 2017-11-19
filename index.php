@@ -15,9 +15,60 @@ $obl=new main();
 
 class main{
 
+    public function __construct(){
+     echo 'Accounts Records<br>';
+     accounts::findAll();
+     echo '<br>';
+     
+     echo 'Creating new id 10 in accounts table<br>';
+     $record = new account();
+     $record->id='';
+     $record->firstname='Dhara';
+     $record->lastname='Patel';
+     $record->email='dharapatel@gmail.com';
+     $record->gender='female';
+     $record->password='abcd';
+     $record->save();
+     echo 'Record added<br>';
+     accounts::findAll();
+     echo '<br>';
+     
+     echo 'Searching id 10 in accounts table<br>';
+     $id=12;
+     accounts::findOne($id);
+     
+     echo '<br>';
+     echo 'Updating details of id 10<br>';
+     $record = new account();
+     $record->id=10;
+     $record->firstname='Meet';
+     $record->lastname='Patel';
+     $record->email='Meetpatel@gmail.com';
+     $record->gender='male';
+     $record->password='asfdf';
+     $record->save();
+     echo 'Updated <br>';
+     accounts::findOne($id);
+     echo '<br>';
+     //print_r($record1);
+    
+    echo 'Deleting id 10 from accounts<br>';
+    $record=new account();
+    $record->id=10;
+    $record->delete();
+    echo 'Deleted <br>';
+    accounts::findAll();
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+
+
   
     
-    echo 'Existing Todos Records.<br>';
+    echo 'Todos Records<br>';
      todos::findAll();
      echo '<br>';
      
@@ -26,8 +77,8 @@ class main{
      $record->id='';
      $record->owneremail='dbp54@njit.edu';
      $record->ownerid='24';
-     $record->createddate='2017-11-10 00:00:00';
-     $record->duedate='2017-12-12 00:00:00';
+     $record->createddate='11/10/2017';
+     $record->duedate='11/10/2017';
      $record->message='Active Record';
      $record->isdone='0';
      $record->save();
@@ -40,7 +91,7 @@ class main{
      todos::findOne($id);
      
      echo '<br>';
-     echo 'Updating details of id=24.<br>';
+     echo 'Updating details of id 24<br>';
      $record = new todo();
      $record->id=24;
      $record->owneremail='dharapatel@gmail.com';
