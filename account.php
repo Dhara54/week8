@@ -4,9 +4,8 @@ class account extends model {
   protected static $modelName = 'account';
   public $id;
 	public $email;
-	public $fname;
-	public $lname;
-	public $birthday;
+	public $firstname;
+	public $lastname;
 	public $gender;
 	public $password;
   
