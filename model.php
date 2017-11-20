@@ -13,7 +13,7 @@ class model {
     private function insert() {
         $modelName1=static::$modelName;
         $tableName = $modelName1::tableName();
-        $this->id=14;
+        $this->id=20;
         $array = get_object_vars($this);
         array_pop($array);
         $columnString = array_keys($array);
@@ -23,7 +23,7 @@ class model {
         $db = dbConn::getConnection();
         $statement = $db->prepare($sql);
         $statement->execute();
-        echo 'Saved record id  ' . $this->id.'<br>';
+        echo 'Saved record id = ' . $this->id.'<br>';
     }
     private function update() {
         $modelName1=static::$modelName;
@@ -45,7 +45,7 @@ class model {
     public function delete() {
         $modelName1=static::$modelName;
         $tableName = $modelName1::tableName();
-        $sql= 'Delete from '.$tableName.' where id='.$this->id;
+        $sql= 'delete from '.$tableName.' where id='.$this->id;
         $db = dbConn::getConnection();
         $statement = $db->prepare($sql);
         $statement->execute();
