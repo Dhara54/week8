@@ -15,52 +15,52 @@ $obl=new main();
 
 class main{
 
-    public function __construct(){
-     echo 'Accounts Records<br>';
+  public function __construct(){
+     echo 'Accounts Records.<br>';
      accounts::findAll();
      echo '<br>';
      
-     echo 'Creating new id 10 in accounts table<br>';
+     echo 'Creating new id in accounts table.<br>';
      $record = new account();
      $record->id='';
+     $record->email='dhara@gmail.com';
      $record->fname='Dhara';
-     $record->lname='Patel';
-     $record->email='dharapatel@gmail.com';
-     $record->phone='253-456-1245';
-     $record->birthday='05/17/1995';
+     $record->lname='patel';
+     $record->phone='253-585-5652';
+     $record->birthday='2017-05-04';
      $record->gender='female';
-     $record->password='abcd';
-     $record->save();
-     echo 'Record added<br>';
+     $record->password='asdf';
+    $record->save();
+     echo 'After adding record.<br>';
      accounts::findAll();
      echo '<br>';
      
-     echo 'Searching id 10 in accounts table<br>';
-     $id=12;
+     echo 'Searching id in accounts table.<br>';
+     $id='20';
      accounts::findOne($id);
      
      echo '<br>';
-     echo 'Updating details of id 10<br>';
+     echo 'Updating id<br>';
      $record = new account();
-     $record->id=10;
-     $record->firstname='Meet';
-     $record->lastname='Patel';
-     $record->email='Meetpatel@gmail.com';
-     $record->phone='456-142-5432';
-     $record->birthday='02/12/1995';
-     $record->gender='male';
-     $record->password='asfdf';
+     $record->id='20';
+     $record->email='dp@gmail.com';
+     $record->fname='dha';
+     $record->lname='p';
+     $record->phone='956-456-1456';
+     $record->birthday='2017-02-03';
+     $record->gender='female';
+     $record->password='4562';
      $record->save();
-     echo 'Updated <br>';
+     echo 'After update.<br>';
      accounts::findOne($id);
      echo '<br>';
      //print_r($record1);
-    
-    echo 'Deleting id 10 from accounts<br>';
+  
+    echo 'Deleting from accounts.<br>';
     $record=new account();
-    $record->id=10;
+    $record->id='20';
     $record->delete();
-    echo 'Deleted <br>';
+    echo 'After Deleting id<br>';
     accounts::findAll();
     echo '<br>';
     echo '<br>';
@@ -68,52 +68,51 @@ class main{
     echo '<br>';
     echo '<br>';
     echo '<br>';
-
-
-  
     
-    echo 'Todos Records<br>';
+    echo 'Existing Todos Records.<br>';
      todos::findAll();
      echo '<br>';
      
-     echo 'Creating new id 24 in todos table.<br>';
+     echo 'Creating new id in todos table.<br>';
      $record = new todo();
      $record->id='';
-     $record->owneremail='dbp54@njit.edu';
-     $record->ownerid='24';
-     $record->createddate='11/10/2017';
-     $record->duedate='11/10/2017';
+     $record->owneremail='dbp@gmail.com';
+     $record->ownerid='7';
+     $record->createddate='2017-05-06 00:00:00';
+     $record->duedate='2017-11-10 00:00:00';
      $record->message='Active Record';
      $record->isdone='0';
      $record->save();
-     echo ' Adding record.<br>';
+     echo 'After adding record.<br>';
      todos::findAll();
      echo '<br>';
      
-     echo 'Searching id 12 in todos table.<br>';
-     $id=12;
+     echo 'Searching new created id in todos table.<br>';
+     $id=20;
      todos::findOne($id);
      
      echo '<br>';
-     echo 'Updating details of id 24<br>';
+     echo 'updating details of id.<br>';
      $record = new todo();
-     $record->id=24;
-     $record->owneremail='dharapatel@gmail.com';
-     $record->ownerid='54';
-     $record->createddate='12/10/2017';
-     $record->duedate='12/102018';
-     $record->message='Active Record for update';
+     $record->id=20;
+     $record->owneremail='xyz@gmail.com';
+     $record->ownerid='2';
+     $record->createddate='2017-07-08 00:00:00';
+     $record->duedate='2017-08-09 00:00:00';
+     $record->message='Active Record update';
      $record->isdone='1';
      $record->save();
-     echo 'After updating <br>';
+     echo 'After update.<br>';
      todos::findOne($id);
      echo '<br>';
     
-    echo 'Deleting id 24 from todos.<br>';
+    echo 'To delete id from todos.<br>';
     $record=new todo();
-    $record->id=24;
+    $record->id='20';
+    
+
     $record->delete();
-    echo 'After Deleting id 24<br>';
+    echo 'After Delete<br>';
     todos::findAll();
     echo '<br>';
     
