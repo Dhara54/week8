@@ -23,9 +23,11 @@ class main{
      echo 'Creating new id 10 in accounts table<br>';
      $record = new account();
      $record->id='';
-     $record->firstname='Dhara';
-     $record->lastname='Patel';
+     $record->fname='Dhara';
+     $record->lname='Patel';
      $record->email='dharapatel@gmail.com';
+     $record->phone='253-456-1245';
+     $record->birthday='05/17/1995';
      $record->gender='female';
      $record->password='abcd';
      $record->save();
@@ -44,6 +46,8 @@ class main{
      $record->firstname='Meet';
      $record->lastname='Patel';
      $record->email='Meetpatel@gmail.com';
+     $record->phone='456-142-5432';
+     $record->birthday='02/12/1995';
      $record->gender='male';
      $record->password='asfdf';
      $record->save();
@@ -96,8 +100,8 @@ class main{
      $record->id=24;
      $record->owneremail='dharapatel@gmail.com';
      $record->ownerid='54';
-     $record->createddate='2017-05-06 00:00:00';
-     $record->duedate='2017-07-08 00:00:00';
+     $record->createddate='12/10/2017';
+     $record->duedate='12/102018';
      $record->message='Active Record for update';
      $record->isdone='1';
      $record->save();
